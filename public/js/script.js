@@ -79,9 +79,11 @@ $(document).ready(function() {
                 $('.js-images-wrapper').append("<img class='js-lazy-image' data-src='" + imageUrl + "' width='" + width + "' height='" + height + "'>");
             });
 
-            // hide loader and show images
-            $('.js-loader').addClass('hide');
-            $('.js-images-wrapper').removeClass('hide');
+            setTimeout(function(){
+                // hide loader and show images
+                $('.js-loader').addClass('hide');
+                $('.js-images-wrapper').removeClass('hide');
+            },700);
 
             images = document.querySelectorAll('.js-lazy-image'); // select all needed images to add observer then
             observer = new IntersectionObserver(onIntersection, config);
