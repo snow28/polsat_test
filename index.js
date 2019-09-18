@@ -45,6 +45,7 @@ app.post('/getData', function(req, res) {
         body: stringData,
         method: 'POST'
     }, function (err, body) {
+        if (err)  console.log(err);
         res.send(body);
     });
 
